@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cigaretto.Azure\Cigaretto.Azure.csproj" />
+    <ProjectReference Include="..\Cigaretto.GitHub\Cigaretto.GitHub.csproj" />
+    <ProjectReference Include="..\Cigaretto.VersionOne\Cigaretto.VersionOne.csproj" />
+    <ProjectReference Include="..\src\Cigaretto.DataLayer\Cigaretto.DataLayer.csproj" />
+  </ItemGroup>
+
+</Project>
