@@ -7,6 +7,19 @@
   <PropertyGroup>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\entrypoint.jsx" />
+    <Content Include="wwwroot\scripts\application.jsx" />
+    <Content Include="wwwroot\scripts\infrastructure\utils.jsx" />
+    <Content Include="wwwroot\scripts\reducers\index.jsx" />
+    <Content Include="wwwroot\scripts\reducers\projectsReducer.jsx" />
+    <Content Include="wwwroot\scripts\routes.jsx" />
+    <Content Include="wwwroot\scripts\store.jsx" />
+    <Content Include="wwwroot\scripts\views\projectsView.jsx" />
+    <Content Include="wwwroot\styles\site.css" />
+    <Content Include="wwwroot\styles\site.min.css" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
