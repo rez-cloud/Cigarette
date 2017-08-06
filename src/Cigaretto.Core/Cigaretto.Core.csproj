@@ -5,10 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cigaretto.Azure\Cigaretto.Azure.csproj" />
-    <ProjectReference Include="..\Cigaretto.GitHub\Cigaretto.GitHub.csproj" />
-    <ProjectReference Include="..\Cigaretto.VersionOne\Cigaretto.VersionOne.csproj" />
-    <ProjectReference Include="..\src\Cigaretto.DataLayer\Cigaretto.DataLayer.csproj" />
+    <ProjectReference Include="..\Cigaretto.DataLayer\Cigaretto.DataLayer.csproj" />
+    <ProjectReference Include="..\Cigaretto.Integration.Azure\Cigaretto.Integration.Azure.csproj" />
+    <ProjectReference Include="..\Cigaretto.Integration.GitHub\Cigaretto.Integration.GitHub.csproj" />
+    <ProjectReference Include="..\Cigaretto.Integration.VersionOne\Cigaretto.Integration.VersionOne.csproj" />
   </ItemGroup>
 
 </Project>

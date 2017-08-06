@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <AssemblyName>Cigaretto.Integration.GitHub</AssemblyName>
+    <RootNamespace>Cigaretto.Integration.GitHub</RootNamespace>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <AssemblyName>Cigaretto.Integration.Azure</AssemblyName>
+    <RootNamespace>Cigaretto.Integration.Azure</RootNamespace>
+  </PropertyGroup>
+
+</Project>
