@@ -1,4 +1,4 @@
-﻿//import './styles/materialize-overrides';
+﻿import './styles/materialize-overrides';
 //import './styles/fonts';
 // scripts
 import React from 'react';
@@ -8,17 +8,22 @@ import Application from './scripts/application';
 import Utils from './scripts/infrastructure/utils';
 import createStore from './scripts/store';
 import { createBrowserHistory } from 'history';
+import { loadProjects} from "./scripts/actions/projectActions";
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 const history = createBrowserHistory();
 const store = createStore(history);
- 
-$.extend(window.kpi, {
+store.dispatch(loadProjects());
+
+$.extend(window.ciga, {
     store: store,
     getState: (partName) => store.getState()[partName], 
     history: history,
     utils: new Utils()
 });
-
+ 
 render(
     <Provider store={store}>
         <Application history={history} />

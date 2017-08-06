@@ -1,67 +1,66 @@
 ﻿import React from 'react';
+
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import ProjectModalForm from "../components/projectForm/ProjectModalForm";
+import { createProject } from "../actions/projectActions";
 
-//let storedSelectedDateRange = {
-//    id: 3,
-//    title: 'Past 30 days',
-//    dateStart: moment().subtract(30, 'days'),
-//    dateEnd: moment()
-//};
-
-//if (sessionStorage.getItem('selectedDateRange')) {
-//    storedSelectedDateRange = JSON.parse(sessionStorage.getItem('selectedDateRange'));
-//    storedSelectedDateRange.dateStart = moment(storedSelectedDateRange.dateStart);
-//    storedSelectedDateRange.dateEnd = moment(storedSelectedDateRange.dateEnd);
-//}
-
-class MetricView extends React.Component {
-
+class ProjectsView extends React.Component {
     constructor(props) {
-        super(props);
 
+        super(props);
         this.state = {
-            isListVisible: false,
-            //ranges: dateRangesList,
-            //isTrendLineDisplayed: sessionStorage.getItem(`isTrendLineFixed_${props.metricId}`) === 'true',
-            //isBenchmarkLineDisplayed: sessionStorage.getItem(`isBenchmarkLineDisplayed_${props.metricId}`) === 'true'
+            projects: props.projects || [],
+            isAddingProject: false
         };
 
-        //this.toggleTrendVisibility = this.toggleTrendVisibility.bind(this);
-        //this.toggleBenchmarkVisibility = this.toggleBenchmarkVisibility.bind(this);
-        //this.toggleDateRangeFilterListVisibility = this.toggleDateRangeFilterListVisibility.bind(this);
+        this.handleNewProjectClicked = this.handleNewProjectClicked.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.handleSaveProject = this.handleSaveProject.bind(this);
+    }
+
+    handleNewProjectClicked() {
+        this.setState({
+            isAddingProject: true
+        });
+    }
+
+    handleClose() {
+        this.setState({
+            isAddingProject: false
+        });
+    }
+
+    handleSaveProject(project) {
+        this.props.createProject(project);
     }
 
     render() {
-        
         return (
-            <div className={metricViewCss['container']}>
-                <div className={metricViewCss['metric']}>
-                    <div className={metricViewCss['header-metric']}>
-                      
-                    </div>
-                    <div>
-                      
-                    </div>
-                </div>
+            <div className="row">
+                <a className="waves-effect waves-light btn"
+                    onClick={this.handleNewProjectClicked}>New Project</a>
+                there is should be list of projects:
+                {this.props.projects.map(project => {
+                    return project.name;
+                })}
+                {this.state.isAddingProject &&
+                    <ProjectModalForm
+                        project={{ name: "" }}
+                        handleClose={this.handleClose}
+                        saveProject={this.handleSaveProject} />}
             </div>
         );
     }
 }
+const mapStateToProps = state => (
+    {
+        projects: state.projects
+    });
+
 
 const mapDispatchToProps = dispatch => ({
-    fetchMetric: (metricId, dateStart, dateEnd, categoryId) => fetchMetric(dispatch, metricId, dateStart, dateEnd, categoryId),
-    fetchCategories: () => fetchCategories(dispatch)
+    createProject: (project) => dispatch(createProject(project))
 });
 
-const mapStateToProps = state => ({
-    //categories: state.categories,
-    //selectedDateRange: state.dateRange.selectedDateRange,
-    //selectCustomDateRange: state.dateRange.selectCustomDateRange,
-    //selectedMetric: state.currentMetric.selectedMetric,
-    //inProgress: state.currentMetric.IsLoading,
-    //error: state.currentMetric.error
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(MetricView);
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectsView);

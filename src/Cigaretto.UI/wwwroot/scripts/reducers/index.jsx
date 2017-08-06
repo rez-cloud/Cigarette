@@ -1,9 +1,11 @@
 ﻿import { combineReducers } from 'redux';
 
-import ProjectsReducer from './projectsReducer';
+import ProjectReducer from './projectReducer';
+import ViewReducer from './viewReducer';
 
 const rootReducer = combineReducers({
-    projectsView: ProjectsReducer   
+    projects: ProjectReducer,
+    currentView: ViewReducer
 });
 
 export default rootReducer

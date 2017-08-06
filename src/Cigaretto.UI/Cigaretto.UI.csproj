@@ -10,15 +10,23 @@
 
   <ItemGroup>
     <Content Include="wwwroot\entrypoint.jsx" />
+    <Content Include="wwwroot\scripts\actions\projectActions.js" />
+    <Content Include="wwwroot\scripts\actionTypes.js" />
     <Content Include="wwwroot\scripts\application.jsx" />
+    <Content Include="wwwroot\scripts\components\ProjectModalForm.jsx" />
     <Content Include="wwwroot\scripts\infrastructure\utils.jsx" />
     <Content Include="wwwroot\scripts\reducers\index.jsx" />
+    <Content Include="wwwroot\scripts\reducers\projectReducer.jsx" />
     <Content Include="wwwroot\scripts\reducers\projectsReducer.jsx" />
+    <Content Include="wwwroot\scripts\reducers\viewReducer.js" />
     <Content Include="wwwroot\scripts\routes.jsx" />
     <Content Include="wwwroot\scripts\store.jsx" />
     <Content Include="wwwroot\scripts\views\projectsView.jsx" />
+    <Content Include="wwwroot\scripts\views\viewActions.js" />
+    <Content Include="wwwroot\styles\materialize-overrides.css" />
     <Content Include="wwwroot\styles\site.css" />
     <Content Include="wwwroot\styles\site.min.css" />
+    <Content Include="wwwroot\styles\variables.css" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

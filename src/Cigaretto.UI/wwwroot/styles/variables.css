@@ -1,0 +1,44 @@
+﻿:root {
+    --backgroundColor: #253543;
+    --navColor: #3c4d5e;
+    --baseTextColor: white;
+    --errorBaseText: #9e9e9e;
+    --userNameColor: white;
+    --userInstallationColor: #8898aa;
+    --navbarHeight: 6rem;
+    --containerSidePadding: 3rem;
+    --colorBodyDark: #253543;
+    --colorHeaderPale: #3c4d5e;
+    --colorCommonWhite: #ffffff;
+    --colorTextLightGray: #8898aa;
+    --colorTileHeaderLine: #4b5a6a;
+    --colorCategoryHeaderLine: #374551;
+    --colorBlueLinkTile: #00ccd4;
+    --colorBlueLinkTileHover: #00aaaf;
+    --colorGrayLinkTile: #9aa1b2;
+    --colorGrayLinkTileHover: #7d8497;
+    --colorTrendPositive: #27d583;
+    --colorTrendNegative: #fc465b;
+    --colorTrendNeutral: #728293;
+    --modalWindowWidth: 39.18em;
+    --modalWindowFooterHorizontalPadding: 0.923em;
+    --modalWindowFooterVerticalPadding: 0.25em;
+    /* Charts */
+    --chartMarginTop: 25;
+    --chartMarginRight: 20;
+    --chartMarginBottom: 50;
+    --chartMarginLeft: 20;
+    --emptyChartHeight: 16.25em;
+    --colorBlueChartLine: #19c1d5;
+    --colorDarkGrayGridLine: #4c5b6f;
+    --colorPaleGrayAxisText: #9aa1b2;
+    --colorPaleGrayCrosshair: #9aa1b2;
+    --tileHeaderIconWidth: 30px;
+    --chartAxisFontColor: #9AA1B2;
+    --chartAxisFontSize: 14px;
+    --chartBenchmarkLineColor: #ffffff;
+    /* Fields */
+    --fieldHeight: 2em;
+    --fieldLineHeight: 2em;
+    --fieldFontSize: 1.5em;
+}

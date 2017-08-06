@@ -1,0 +1,4 @@
+﻿export const GO_TO_VIEW = 'GO_TO_VIEW';
+
+export const LOAD_PROJECTS_SUCCESS = 'LOAD_PROJECTS_SUCCESS';
+export const CREATE_PROJECT = 'CREATE_PROJECT';
