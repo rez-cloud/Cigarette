@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from './routes'
-import PropTypes from 'prop-types';
+import Nav from "./components/nav/nav";
 
 //import Nav from './components/nav/nav';
 
@@ -16,7 +16,7 @@ class Application extends React.Component {
             <ConnectedRouter history={this.props.history}>
                 <MuiThemeProvider >
                     <div>
-
+                        <Nav />
                         <div className={css.content}>
                             {routes}
                         </div>

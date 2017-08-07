@@ -1,0 +1,18 @@
+﻿label.logo-caption {
+    font-size: 2em;    
+    font-family: roboto;
+}
+
+    label.logo-caption span.first {
+        color: #19c1d5;
+        /*font-style: italic*/
+    }
+
+    label.logo-caption span.second {
+        color: #19c1d5;
+    }
+
+
+.logo-container {
+    padding-left: 2em;
+}

@@ -13,7 +13,8 @@
     <Content Include="wwwroot\scripts\actions\projectActions.js" />
     <Content Include="wwwroot\scripts\actionTypes.js" />
     <Content Include="wwwroot\scripts\application.jsx" />
-    <Content Include="wwwroot\scripts\components\ProjectModalForm.jsx" />
+    <Content Include="wwwroot\scripts\components\nav\nav.jsx" />
+    <Content Include="wwwroot\scripts\components\projectForm\ProjectModalForm.jsx" />
     <Content Include="wwwroot\scripts\infrastructure\utils.jsx" />
     <Content Include="wwwroot\scripts\reducers\index.jsx" />
     <Content Include="wwwroot\scripts\reducers\projectReducer.jsx" />
