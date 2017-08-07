@@ -26,7 +26,7 @@ $.extend(window.ciga, {
  
 render(
     <Provider store={store}>
-        <Application history={history} />
+        <Application history={history} state={store.getState()} />
     </Provider>,
     document.getElementById('application')
 );

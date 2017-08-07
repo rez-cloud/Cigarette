@@ -14,9 +14,9 @@ class ProjectsView extends React.Component {
             isAddingProject: false
         };
 
-        this.handleNewProjectClicked = this.handleNewProjectClicked.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-        this.handleSaveProject = this.handleSaveProject.bind(this);
+        //this.handleNewProjectClicked = this.handleNewProjectClicked.bind(this);
+        //this.handleClose = this.handleClose.bind(this);
+        //this.handleSaveProject = this.handleSaveProject.bind(this);
     }
 
     handleNewProjectClicked() {
@@ -35,11 +35,9 @@ class ProjectsView extends React.Component {
         this.props.createProject(project);
     }
 
-    render() {
+    render() {        
         return (
             <div className="row">
-                <a className="waves-effect waves-light btn"
-                    onClick={this.handleNewProjectClicked}>New Project</a>
                 there is should be list of projects:
                 {this.props.projects.map(project => {
                     return project.name;
@@ -48,11 +46,12 @@ class ProjectsView extends React.Component {
                     <ProjectModalForm
                         project={{ name: "" }}
                         handleClose={this.handleClose}
-                        saveProject={this.handleSaveProject} />}
+                        saveProject={this.handleSaveProject}/>}
             </div>
         );
     }
 }
+
 const mapStateToProps = state => (
     {
         projects: state.projects

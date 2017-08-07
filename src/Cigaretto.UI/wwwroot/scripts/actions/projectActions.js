@@ -1,4 +1,12 @@
-﻿import { LOAD_PROJECTS_SUCCESS, CREATE_PROJECT } from "../actionTypes";
+﻿import { LOAD_PROJECTS_SUCCESS, CREATE_PROJECT, REQUEST_CREATE_PROJECT, CANCEL_CREATE_PROJECT } from "../actionTypes";
+
+export function requestCreateProject() {
+    return { type: REQUEST_CREATE_PROJECT }
+}
+
+export function cancelCreateProject() {
+    return { type: CANCEL_CREATE_PROJECT }
+}
 
 export function createProject(project) {
     return { type: CREATE_PROJECT, project }

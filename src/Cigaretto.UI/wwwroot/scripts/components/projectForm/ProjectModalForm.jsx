@@ -1,4 +1,5 @@
 ﻿import React from "react";
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
@@ -7,33 +8,18 @@ import TextField from 'material-ui/TextField';
 class ProjectModalForm extends React.Component {
     static proptTypes = {
         project: PropTypes.object.isRequired,
-        handleClose: PropTypes.func.isRequired,
-        saveProject: PropTypes.func.isRequired
+        //handleClose: PropTypes.func.isRequired,
+        //saveProject: PropTypes.func.isRequired,
+        open: PropTypes.bool.isRequired
     };
 
     constructor(props) {
-
         super(props);
         this.state = {
-            project: props.project,
-            open: true
+            project: this.props.project
         };
 
-        this.handleClose = this.handleClose.bind(this);
-        this.handleSave = this.handleSave.bind(this);
         this.handleOnChanged = this.handleOnChanged.bind(this);
-    }
-
-    handleClose() {
-        this.setState({
-            open: false
-        });
-        this.props.handleClose();
-    }
-
-    handleSave() {
-        this.props.saveProject(this.state.project);
-        this.handleClose();
     }
 
     handleOnChanged(event) {
@@ -42,32 +28,35 @@ class ProjectModalForm extends React.Component {
         this.setState({ project });
     }
 
-    render() {
+    getButtons() {
         const actions = [
             <FlatButton
                 label="Cancel"
                 primary={true}
-                onClick={this.handleClose}
+                onClick={this.props.handleClose}
             />,
             <FlatButton
                 label="Submit"
                 primary={true}
                 disabled={this.state.project.name.length < 2}
-                onClick={this.handleSave} 
+                onClick={() => this.props.handleSave(this.state.project)}
             />
         ];
+        return actions;
+    }
+
+    render() {
+
         const customContentStyle = {
             width: '500px',
             maxWidth: '500px'
         };
-
         return (
             <Dialog
                 title="Project"
-                actions={actions}
-
+                actions={this.getButtons()}
                 modal={true}
-                open={this.state.open}
+                open={this.props.open}
                 contentStyle={customContentStyle}
             >
                 <TextField hintText="Project name"
@@ -79,4 +68,4 @@ class ProjectModalForm extends React.Component {
         );
     }
 }
-export default ProjectModalForm;
+export default (ProjectModalForm);
