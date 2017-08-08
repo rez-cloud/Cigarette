@@ -13,12 +13,16 @@
     <Content Include="wwwroot\scripts\actions\projectActions.js" />
     <Content Include="wwwroot\scripts\actionTypes.js" />
     <Content Include="wwwroot\scripts\application.jsx" />
+    <Content Include="wwwroot\scripts\components\nav\nav.css" />
     <Content Include="wwwroot\scripts\components\nav\nav.jsx" />
+    <Content Include="wwwroot\scripts\components\nav\nav.scss" />
     <Content Include="wwwroot\scripts\components\projectForm\ProjectModalForm.jsx" />
+    <Content Include="wwwroot\scripts\containers\AddProject.js" />
+    <Content Include="wwwroot\scripts\infrastructure\API.js" />
     <Content Include="wwwroot\scripts\infrastructure\utils.jsx" />
+    <Content Include="wwwroot\scripts\reducers\addProjectReducer.js" />
     <Content Include="wwwroot\scripts\reducers\index.jsx" />
     <Content Include="wwwroot\scripts\reducers\projectReducer.jsx" />
-    <Content Include="wwwroot\scripts\reducers\projectsReducer.jsx" />
     <Content Include="wwwroot\scripts\reducers\viewReducer.js" />
     <Content Include="wwwroot\scripts\routes.jsx" />
     <Content Include="wwwroot\scripts\store.jsx" />
@@ -30,17 +34,24 @@
     <Content Include="wwwroot\styles\variables.css" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.1.1" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Cigaretto.Common\Cigaretto.Common.csproj" />
     <ProjectReference Include="..\Cigaretto.DataLayer\Cigaretto.DataLayer.csproj" />
   </ItemGroup>
   <ItemGroup>

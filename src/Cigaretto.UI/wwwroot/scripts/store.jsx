@@ -1,4 +1,5 @@
-﻿import { applyMiddleware, compose, createStore } from 'redux'
+﻿import thunkMiddleware from 'redux-thunk';
+import { applyMiddleware, compose, createStore } from 'redux'
 import { routerMiddleware, connectRouter } from 'connected-react-router';
 import rootReducer from './reducers';
 
@@ -7,6 +8,7 @@ const _createStore = (history) => createStore(
     connectRouter(history)(rootReducer),
     composeEnhancer(
         applyMiddleware(
+            thunkMiddleware,
             routerMiddleware(history)
         )
     )

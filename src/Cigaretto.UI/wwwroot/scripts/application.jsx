@@ -12,13 +12,6 @@ import AddProject from "./containers/AddProject";
 //import Nav from './components/nav/nav';
 
 class Application extends React.Component {
-    componentWillReceiveProps(g) {
-        var z = g;
-    }
-
-    isNewProjectRequested() {
-        return !!this.props.state.projects.newProject;
-    }
 
     render() {
         return (

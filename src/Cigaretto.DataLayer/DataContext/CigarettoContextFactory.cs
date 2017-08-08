@@ -21,7 +21,7 @@ namespace Cigaretto.DataLayer.DataContext {
         public CigarettoDataContext Create(string connectionString) {
             var optionBuilder = new DbContextOptionsBuilder<CigarettoDataContext>();
             optionBuilder.UseSqlServer(connectionString);
-            var context = new CigarettoDataContext(optionBuilder.Options);
+            var context = new CigarettoDataContext(optionBuilder.Options );
 
             if (context.Database.GetPendingMigrations().Any()) {
                 context.Database.Migrate();

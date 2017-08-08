@@ -1,19 +1,35 @@
-﻿import { LOAD_PROJECTS_SUCCESS, CREATE_PROJECT, REQUEST_CREATE_PROJECT, CANCEL_CREATE_PROJECT } from "../actionTypes";
+﻿import *as types from "../actionTypes";
+import API from "../infrastructure/API";
+
+const api = new API();
 
 export function requestCreateProject() {
-    return { type: REQUEST_CREATE_PROJECT }
+    return { type: types.REQUEST_CREATE_PROJECT }
 }
 
 export function cancelCreateProject() {
-    return { type: CANCEL_CREATE_PROJECT }
+    return { type: types.CANCEL_CREATE_PROJECT }
 }
 
-export function createProject(project) {
-    return { type: CREATE_PROJECT, project }
+export function beginSaving() {
+    return { type: types.BEGIN_SAVING_PROJECT }
+}
+
+export function endSaving(project, error) {
+    return { type: types.END_SAVING_PROJECT }
+}
+
+export function saveProject(project) {
+    return dispatch => {
+        dispatch(beginSaving());
+        return api.saveProject(project)
+            .done(data => dispatch(endSaving(data)))
+            .catch(error => dispatch(endSaving(project, error)));
+    }
 }
 
 export function loadProjectSuccess(projects) {
-    return { type: LOAD_PROJECTS_SUCCESS, projects }
+    return { type: types.LOAD_PROJECTS_SUCCESS, projects }
 }
 
 export function loadProjects() {

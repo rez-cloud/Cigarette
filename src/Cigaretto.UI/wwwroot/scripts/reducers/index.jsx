@@ -7,7 +7,7 @@ import ViewReducer from './viewReducer';
 const rootReducer = combineReducers({
     projects: ProjectReducer,
     currentView: ViewReducer,
-    newProjectRequested: AddProjectReducer
+    newProject: AddProjectReducer
 });
 
 export default rootReducer

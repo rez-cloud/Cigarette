@@ -8,15 +8,14 @@ import TextField from 'material-ui/TextField';
 class ProjectModalForm extends React.Component {
     static proptTypes = {
         project: PropTypes.object.isRequired,
-        //handleClose: PropTypes.func.isRequired,
-        //saveProject: PropTypes.func.isRequired,
-        open: PropTypes.bool.isRequired
+        open: PropTypes.bool.isRequired,
+        dataProcessing: PropTypes.bool.isRequired
     };
 
     constructor(props) {
         super(props);
         this.state = {
-            project: this.props.project
+            project: { ...this.props.project }
         };
 
         this.handleOnChanged = this.handleOnChanged.bind(this);
@@ -26,6 +25,12 @@ class ProjectModalForm extends React.Component {
         let project = { ...this.project };
         project.name = event.target.value;
         this.setState({ project });
+    }
+
+    componentWillReceiveProps() {
+        this.setState({
+            project: { ...this.props.project }
+        });
     }
 
     getButtons() {
@@ -55,6 +60,7 @@ class ProjectModalForm extends React.Component {
             <Dialog
                 title="Project"
                 actions={this.getButtons()}
+                disabled={true}
                 modal={true}
                 open={this.props.open}
                 contentStyle={customContentStyle}

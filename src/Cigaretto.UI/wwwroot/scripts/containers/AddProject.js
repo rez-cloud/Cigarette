@@ -1,10 +1,11 @@
 ﻿import { connect } from 'react-redux'
-import { createProject, cancelCreateProject } from "../actions/projectActions";
+import { saveProject, cancelCreateProject } from "../actions/projectActions";
 import ProjectForm from "../components/projectForm/ProjectModalForm";
 
 const mapStateToProps = state => {
     return {
-        open: state.newProjectRequested,
+        open: state.newProject.isRequested,
+        dataProcessing: state.newProject.isProcessed,
         project: { name: "" }
     }
 }
@@ -12,7 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         handleSave: project => {
-            dispatch(createProject(project));
+            dispatch(saveProject(project));
         },
         handleClose: () => dispatch(cancelCreateProject())
     }

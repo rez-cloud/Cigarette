@@ -1,11 +1,17 @@
 ﻿import * as types from "../actionTypes";
 
-export default function projectReducer(state = false, action) {
+export default function projectReducer(state = { isRequested: false, isProcessed: false }, action) {
     switch (action.type) {
         case types.REQUEST_CREATE_PROJECT:
-            return true;
+            return Object.assign({}, state,
+                {
+                    isRequested: true
+                });
         case types.CANCEL_CREATE_PROJECT:
-            return false;
+            return {
+                isRequested: false,
+                isProcessed: false
+            };
         case types.CREATE_PROJECT:
             return false;
         default:
