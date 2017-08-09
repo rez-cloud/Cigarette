@@ -1,13 +1,13 @@
 ﻿import React from 'react';
 import { Route, Switch } from 'react-router';
 
-import ProjectsView from './views/projectsView';
+import ProjectsViewContainer from "./containers/projectsViewContainer";
 
 const _routes = [
     {
         name: "projects",
         path: '/',
-        component: ProjectsView
+        component: ProjectsViewContainer
     }
 ];
 

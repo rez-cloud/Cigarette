@@ -10,7 +10,7 @@ module.exports = {
     context: path.resolve(rootPath),
     entry: [
         "babel-polyfill",
-        "./entryPoint"        
+        "./entryPoint"
     ],
     output: {
         path: path.resolve(path.join(rootPath, buildFolder)),
@@ -18,7 +18,7 @@ module.exports = {
         filename: "bundle.js"
     },
     module: {
-        rules: [            
+        rules: [
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
@@ -30,12 +30,16 @@ module.exports = {
                 }
             },
             {
+                test: /ReactToastify\.css?$/,
+                loaders: ['style-loader', 'css-loader']
+            },
+            {
                 test: /\.css?$/,
                 exclude: /(node_modules|\\materialize_.*\.css$|materialize-overrides\.css$)+/,
                 use: [
                     {
-                        loader: 'style-loader'
-                    }, 
+                        loader: 'style-loader' 
+                    },
                     {
                         loader: 'css-loader',
                         options: {
@@ -53,26 +57,26 @@ module.exports = {
                                 require('postcss-import')({
                                     root: rootPath,
                                     path: ['styles/']
-                                }), 
-                                require('postcss-url')({filter: "node_modules/materialize-css/**/*"}),
+                                }),
+                                require('postcss-url')({ filter: "node_modules/materialize-css/**/*" }),
                                 require('postcss-nested')(),
-                                require('postcss-cssnext')(), 
+                                require('postcss-cssnext')(),
                                 require('postcss-extend')(),
                                 require('postcss-assets')({
                                     basePath: rootPath,
                                     loadPaths: ['images/', 'images/favicons', 'fonts/']
                                 }),
-                            ] 
+                            ]
                         }
                     }
                 ]
             },
             {
                 test: /(\\materialize_.*\.css$|\\rc-calendar\\.*\\index.css|materialize-overrides\.css$)/,  // our own styles for rewrited materialize components
-                use:[
+                use: [
                     {
                         loader: 'style-loader'
-                    }, 
+                    },
                     {
                         loader: 'css-loader',
                         options: {
@@ -90,20 +94,21 @@ module.exports = {
                                 require('postcss-import')({
                                     root: rootPath,
                                     path: ['styles/']
-                                }), 
-                                require('postcss-url')({filter: "node_modules/materialize-css/**/*"}),
+                                }),
+                                require('postcss-url')({ filter: "node_modules/materialize-css/**/*" }),
                                 require('postcss-nested')(),
-                                require('postcss-cssnext')(), 
+                                require('postcss-cssnext')(),
                                 require('postcss-extend')(),
                                 require('postcss-assets')({
                                     basePath: rootPath,
                                     loadPaths: ['images/', 'images/favicons', 'fonts/']
-                                }),
-                            ] 
+                                })
+                            ]
                         }
                     }
                 ]
             },
+            
             {
                 test: /\.scss?$/,
                 exclude: /node_modules/,
@@ -129,9 +134,9 @@ module.exports = {
             'jquery': path.resolve('node_modules/jQuery/dist/', isDebug ? 'jquery.js' : 'jquery.min.js'),
             'materialize': path.resolve('node_modules/materialize-css/dist/js/', isDebug ? 'materialize.js' : 'materialize.min.js'),
             //'react$': path.resolve('node_modules/react/dist/', isDebug ? 'react.js' : 'react.min.js'),
-           // 'react-dom$': path.resolve('node_modules/react-dom/dist/', isDebug ? 'react-dom.js' : 'react-dom.min.js'),
+            // 'react-dom$': path.resolve('node_modules/react-dom/dist/', isDebug ? 'react-dom.js' : 'react-dom.min.js'),
             //'redux$': path.resolve('node_modules/redux/dist/', isDebug ? 'redux.js' : 'redux.min.js'),
-           // 'react-redux$': path.resolve('node_modules/react-redux/dist/', isDebug ? 'react-redux.js' : 'react-redux.min.js')
+            // 'react-redux$': path.resolve('node_modules/react-redux/dist/', isDebug ? 'react-redux.js' : 'react-redux.min.js')
         }
     },
     plugins: [

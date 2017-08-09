@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
+import LinearProgress from 'material-ui/LinearProgress';
 
 class ProjectModalForm extends React.Component {
     static proptTypes = {
@@ -60,12 +61,16 @@ class ProjectModalForm extends React.Component {
             <Dialog
                 title="Project"
                 actions={this.getButtons()}
-                disabled={true}
+
                 modal={true}
                 open={this.props.open}
                 contentStyle={customContentStyle}
             >
+
+                {this.props.dataProcessing && <LinearProgress mode="indeterminate" color="#FF9800" />}
+                
                 <TextField hintText="Project name"
+                    disabled={this.props.dataProcessing}
                     value={this.state.project.name}
                     onChange={this.handleOnChanged}
                     fullWidth={true} />

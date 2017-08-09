@@ -3,7 +3,7 @@
 export default function projectReducer(state = [], action) {
     switch (action.type) {
         case types.LOAD_PROJECTS_SUCCESS:
-            return action.projects;        
+            return action.projects;
         case types.CREATE_PROJECT:
             {
                 return [
@@ -11,12 +11,11 @@ export default function projectReducer(state = [], action) {
                     action.project
                 ];
             }
-        case types.PROJECT_CREATED:
-            var newObj = {
-                ...state,
-                newProject: undefined
-            };
-            return newObj; 
+        case types.END_SAVING_PROJECT:
+            if (action.error) {
+                return state;
+            }
+            return [...state, action.project];
         default:
             return state;
     }

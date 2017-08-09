@@ -1,5 +1,6 @@
-﻿import *as types from "../actionTypes";
+﻿import * as types from "../actionTypes";
 import API from "../infrastructure/API";
+import { addNotification } from "./notificationActions";
 
 const api = new API();
 
@@ -16,14 +17,19 @@ export function beginSaving() {
 }
 
 export function endSaving(project, error) {
-    return { type: types.END_SAVING_PROJECT }
+    return { type: types.END_SAVING_PROJECT, project: project, error: error }
 }
 
 export function saveProject(project) {
     return dispatch => {
         dispatch(beginSaving());
         return api.saveProject(project)
-            .done(data => dispatch(endSaving(data)))
+            .done(data => {
+                dispatch(endSaving(data));
+                dispatch(addNotification({
+                    text: `Project ${data.name} has been created`
+                }));
+            })
             .catch(error => dispatch(endSaving(project, error)));
     }
 }

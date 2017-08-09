@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Content Include="wwwroot\entrypoint.jsx" />
+    <Content Include="wwwroot\scripts\actions\notificationActions.js" />
     <Content Include="wwwroot\scripts\actions\projectActions.js" />
     <Content Include="wwwroot\scripts\actionTypes.js" />
     <Content Include="wwwroot\scripts\application.jsx" />
@@ -18,10 +19,13 @@
     <Content Include="wwwroot\scripts\components\nav\nav.scss" />
     <Content Include="wwwroot\scripts\components\projectForm\ProjectModalForm.jsx" />
     <Content Include="wwwroot\scripts\containers\AddProject.js" />
+    <Content Include="wwwroot\scripts\containers\applicationContainer.js" />
+    <Content Include="wwwroot\scripts\containers\projectsViewContainer.js" />
     <Content Include="wwwroot\scripts\infrastructure\API.js" />
     <Content Include="wwwroot\scripts\infrastructure\utils.jsx" />
     <Content Include="wwwroot\scripts\reducers\addProjectReducer.js" />
     <Content Include="wwwroot\scripts\reducers\index.jsx" />
+    <Content Include="wwwroot\scripts\reducers\notificationReducer.js" />
     <Content Include="wwwroot\scripts\reducers\projectReducer.jsx" />
     <Content Include="wwwroot\scripts\reducers\viewReducer.js" />
     <Content Include="wwwroot\scripts\routes.jsx" />

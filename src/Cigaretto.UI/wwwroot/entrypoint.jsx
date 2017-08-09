@@ -4,7 +4,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import Application from './scripts/application';
+import ApplicationContainer from "./scripts/containers/applicationContainer";
 import Utils from './scripts/infrastructure/utils';
 import createStore from './scripts/store';
 import { createBrowserHistory } from 'history';
@@ -18,7 +18,7 @@ const store = createStore(history);
 
 store.dispatch(loadProjects());
 
-$.extend(window.ciga, {
+$.extend(window.ciga = {}, {
     store: store,
     getState: (partName) => store.getState()[partName],
     history: history,
@@ -27,7 +27,7 @@ $.extend(window.ciga, {
 
 render(
     <Provider store={store}>
-        <Application history={history} state={store.getState()} />
+        <ApplicationContainer history={history} state={store.getState()} />
     </Provider>,
     document.getElementById('application')
 );
