@@ -15,6 +15,7 @@
     <Content Include="wwwroot\scripts\actions\projectActions.js" />
     <Content Include="wwwroot\scripts\actionTypes.js" />
     <Content Include="wwwroot\scripts\application.jsx" />
+    <Content Include="wwwroot\scripts\components\moduleList\moduleList.css" />
     <Content Include="wwwroot\scripts\components\moduleList\moduleList.jsx" />
     <Content Include="wwwroot\scripts\components\nav\nav.css" />
     <Content Include="wwwroot\scripts\components\nav\nav.jsx" />
@@ -30,13 +31,18 @@
     <Content Include="wwwroot\scripts\infrastructure\API.js" />
     <Content Include="wwwroot\scripts\infrastructure\utils.jsx" />
     <Content Include="wwwroot\scripts\reducers\addProjectReducer.js" />
-    <Content Include="wwwroot\scripts\reducers\index.jsx" />
+    <Content Include="wwwroot\scripts\reducers\index.js" />
+    <Content Include="wwwroot\scripts\reducers\module\moduleLoadingReducer.js" />
+    <Content Include="wwwroot\scripts\reducers\module\modulesLoadingReducer.js" />
+    <Content Include="wwwroot\scripts\reducers\module\modulesReducer.js" />
     <Content Include="wwwroot\scripts\reducers\notificationReducer.js" />
     <Content Include="wwwroot\scripts\reducers\projectLoadingReducer.js" />
     <Content Include="wwwroot\scripts\reducers\projectReducer.jsx" />
     <Content Include="wwwroot\scripts\reducers\project\addProjectReducer.js" />
     <Content Include="wwwroot\scripts\reducers\project\projectLoadingReducer.js" />
     <Content Include="wwwroot\scripts\reducers\project\projectReducer.jsx" />
+    <Content Include="wwwroot\scripts\reducers\project\projectsReducer.js" />
+    <Content Include="wwwroot\scripts\reducers\project\projectsReducer.jsx" />
     <Content Include="wwwroot\scripts\reducers\project\selectProjectReducer.js" />
     <Content Include="wwwroot\scripts\reducers\selectProjectReducer.js" />
     <Content Include="wwwroot\scripts\reducers\viewReducer.js" />
