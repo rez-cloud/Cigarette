@@ -20,6 +20,24 @@ export function endSaving(project, error) {
     return { type: types.END_SAVING_PROJECT, project: project, error: error }
 }
 
+export function beginLoadProjects() {
+    return { type: types.BEGIN_LOAD_PROJECTS }
+}
+
+export function endLoadProjects(projects, error) {
+    return { type: types.END_LOAD_PROJECTS, projects: projects, error: error }
+}
+
+export function loadProjects() {
+    return dispatch => {
+        dispatch(beginLoadProjects());
+        return api.loadProjects()
+            .done(data => {
+                dispatch(endLoadProjects(data));
+            }).catch(error => dispatch(endLoadProjects([], error)));
+    }
+}
+
 export function saveProject(project) {
     return dispatch => {
         dispatch(beginSaving());
@@ -32,22 +50,4 @@ export function saveProject(project) {
             })
             .catch(error => dispatch(endSaving(project, error)));
     }
-}
-
-export function loadProjectSuccess(projects) {
-    return { type: types.LOAD_PROJECTS_SUCCESS, projects }
-}
-
-export function loadProjects() {
-    const projects = [
-        {
-            id: "Marketplace",
-            name: "Marketplace"
-        },
-        {
-            id: "KPI",
-            name: "KPI Dashboard"
-        }
-    ];
-    return loadProjectSuccess(projects);
 }

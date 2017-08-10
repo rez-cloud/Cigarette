@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Cigaretto.DataLayer.DataContext.Tables;
@@ -16,6 +17,17 @@ namespace Cigaretto.UI.Controllers {
         public ProjectController(Common.Mapping.IObjectMapper mapper, IProjectProvider projectProvider) {
             Mapper = mapper;
             ProjectProvider = projectProvider;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetProjects() {
+            if (!ModelState.IsValid) {
+                return ValidationError();
+            }
+
+            List<Project> projects = await ProjectProvider.GetProjectsAsync();
+            List<ProjectDto> projectsDto = Mapper.Map<List<Project>, List<ProjectDto>>(projects);
+            return FromContent(projectsDto);
         }
 
         [HttpPost]

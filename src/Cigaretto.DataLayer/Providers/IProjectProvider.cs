@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Cigaretto.DataLayer.DataContext;
 using Cigaretto.DataLayer.DataContext.Tables;
 using Microsoft.EntityFrameworkCore;
@@ -6,9 +7,12 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Cigaretto.DataLayer.Providers {
     public interface IProjectProvider {
+
         Task<Project> AddProjectAsync(Project newProject);
 
         Task<bool> RemoveProjectAsync(int id);
+
+        Task<List<Project>> GetProjectsAsync();
     }
 
     public class ProjectProvider : IProjectProvider {
@@ -30,6 +34,11 @@ namespace Cigaretto.DataLayer.Providers {
             EntityEntry<Project> entity = Context.Projects.Remove(project);
             await Context.SaveChangesAsync();
             return entity.State == EntityState.Deleted;
+        }
+
+        public async Task<List<Project>> GetProjectsAsync() {
+            List<Project> projects = await Context.Projects.AsNoTracking().ToListAsync();
+            return projects;
         }
     }
 }

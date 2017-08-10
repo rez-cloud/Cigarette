@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { createProject } from "../actions/projectActions";
 
+import ProjectListContainer from "../containers/projectListContainer";
+
 class ProjectsView extends React.Component {
     static proptTypes = {
         projects: PropTypes.array.isRequired,
@@ -23,11 +25,10 @@ class ProjectsView extends React.Component {
 
     render() {
         return (
-            <div className="row">
-                there is should be list of projects:
-                {this.props.projects.map(project => {
-                    return project.name;
-                })}
+            <div className="row ">
+                <div className="col s3 blue lighten-5">
+                    <ProjectListContainer projects={this.props.projects} /></div>
+                <div className="col s9"></div>
             </div>
         );
     }

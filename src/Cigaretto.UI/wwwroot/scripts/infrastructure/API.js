@@ -3,6 +3,10 @@
 const projectApi = 'api/project';
 
 class API {
+    loadProjects() {
+        return this._get(projectApi);
+    }
+
     saveProject(project) {
         return this._post(projectApi, project);
     }
@@ -15,6 +19,14 @@ class API {
             //success: success,
             //dataType: "application/json",
             contentType: 'application/json'
+        });
+    }
+
+    _get(url) {
+        return $.get({            
+            url: url,
+            //success: success,
+            //dataType: "application/json"
         });
     }
 }

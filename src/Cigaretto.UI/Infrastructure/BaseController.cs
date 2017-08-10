@@ -30,7 +30,7 @@ namespace Cigaretto.UI.Infrastructure {
             if (content == null) { return NoContent(); }
             IEnumerable source = content as IEnumerable;
             if (source != null && !Enumerable.OfType<object>(source).Any()) { return NoContent(); }
-            return Ok(BasicJsonSerializer.Serialize(content));
+            return Ok(content);
         }
     }
 }

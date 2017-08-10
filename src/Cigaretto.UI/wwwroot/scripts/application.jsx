@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from './routes'
 import Nav from "./components/nav/nav";
-import AddProject from "./containers/AddProject";
+import AddProject from "./containers/addProject";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
