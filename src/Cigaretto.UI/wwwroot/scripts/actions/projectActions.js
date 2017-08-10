@@ -2,6 +2,8 @@
 import API from "../infrastructure/API";
 import { addNotification } from "./notificationActions";
 
+import { loadModules } from "./moduleActions";
+
 const api = new API();
 
 export function requestCreateProject() {
@@ -26,6 +28,17 @@ export function beginLoadProjects() {
 
 export function endLoadProjects(projects, error) {
     return { type: types.END_LOAD_PROJECTS, projects: projects, error: error }
+}
+
+export function selectProject(project) {
+    return dispatch => {
+        dispatch(selectProjectCore(project));
+        dispatch(loadModules(project.id));
+    }
+}
+
+export function selectProjectCore(project) {
+    return { type: types.SELECT_PROJECT, project: project }
 }
 
 export function loadProjects() {

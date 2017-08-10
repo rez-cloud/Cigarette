@@ -5,6 +5,7 @@ import ProjectsView from "../views/projectsView";
 const mapStateToProps = state => {
     return {
         projects: state.projects,
+        currentProject: state.currentProject,
         error: state.error,
         loading: state.isProjectsLoading
     }

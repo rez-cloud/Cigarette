@@ -14,34 +14,37 @@ let SelectableList = makeSelectable(List);
 class ProjectModalForm extends React.Component {
     static proptTypes = {
         projects: PropTypes.array.isRequired,
-        loading: PropTypes.bool
+        loading: PropTypes.bool,
+        selectProject: PropTypes.func.isRequired
     };
 
     constructor(props) {
         super(props);
         this.state = {
-            project: { ...this.props.project }
-        };
 
-        //this.handleOnChanged = this.handleOnChanged.bind(this);
+            selectedIndex: -1
+        };
     }
 
-    handleOnChanged(event) {
-        let project = { ...this.project };
-        project.name = event.target.value;
-        this.setState({ project });
+    handleOnChanged = (event, index) => {
+        this.setState({
+            selectedIndex: index
+        });
+        var selectedProject = this.props.projects.filter((value) => value.id === index)[0];
+        this.props.selectProject(selectedProject);
     }
 
     componentWillReceiveProps() {
-        this.setState({
-            project: { ...this.props.project }
-        });
+
     }
 
     render() {
 
         return (
-            <SelectableList>
+            <SelectableList
+                value={this.state.selectedIndex}
+                onChange={this.handleOnChanged}
+            >
                 <Subheader className={`grey lighten-4 ${css.list}`}>Available Projects</Subheader>
                 {this.props.loading && <LinearProgress mode="indeterminate" color="#FF9800" />}
                 {this.props.projects.map(p => {
@@ -52,7 +55,7 @@ class ProjectModalForm extends React.Component {
                             primaryText={project.name}
                             leftAvatar={<Avatar icon={<FileFolder />} />}
                         >
-                            
+
                         </ListItem>
 
                     );

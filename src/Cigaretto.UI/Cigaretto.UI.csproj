@@ -10,19 +10,21 @@
 
   <ItemGroup>
     <Content Include="wwwroot\entrypoint.jsx" />
+    <Content Include="wwwroot\scripts\actions\moduleActions.js" />
     <Content Include="wwwroot\scripts\actions\notificationActions.js" />
     <Content Include="wwwroot\scripts\actions\projectActions.js" />
     <Content Include="wwwroot\scripts\actionTypes.js" />
     <Content Include="wwwroot\scripts\application.jsx" />
+    <Content Include="wwwroot\scripts\components\moduleList\moduleList.jsx" />
     <Content Include="wwwroot\scripts\components\nav\nav.css" />
     <Content Include="wwwroot\scripts\components\nav\nav.jsx" />
     <Content Include="wwwroot\scripts\components\nav\nav.scss" />
     <Content Include="wwwroot\scripts\components\projectForm\ProjectModalForm.jsx" />
-    <Content Include="wwwroot\scripts\components\projectList\projectList.css" />
     <Content Include="wwwroot\scripts\components\projectList\projectList.jsx" />
-    <Content Include="wwwroot\scripts\components\projectList\projectList.scss" />
+    <Content Include="wwwroot\scripts\components\projectList\projectList.css" />
     <Content Include="wwwroot\scripts\containers\AddProject.js" />
     <Content Include="wwwroot\scripts\containers\applicationContainer.js" />
+    <Content Include="wwwroot\scripts\containers\moduleListContainer.js" />
     <Content Include="wwwroot\scripts\containers\projectListContainer.js" />
     <Content Include="wwwroot\scripts\containers\projectsViewContainer.js" />
     <Content Include="wwwroot\scripts\infrastructure\API.js" />
@@ -32,9 +34,15 @@
     <Content Include="wwwroot\scripts\reducers\notificationReducer.js" />
     <Content Include="wwwroot\scripts\reducers\projectLoadingReducer.js" />
     <Content Include="wwwroot\scripts\reducers\projectReducer.jsx" />
+    <Content Include="wwwroot\scripts\reducers\project\addProjectReducer.js" />
+    <Content Include="wwwroot\scripts\reducers\project\projectLoadingReducer.js" />
+    <Content Include="wwwroot\scripts\reducers\project\projectReducer.jsx" />
+    <Content Include="wwwroot\scripts\reducers\project\selectProjectReducer.js" />
+    <Content Include="wwwroot\scripts\reducers\selectProjectReducer.js" />
     <Content Include="wwwroot\scripts\reducers\viewReducer.js" />
     <Content Include="wwwroot\scripts\routes.jsx" />
     <Content Include="wwwroot\scripts\store.jsx" />
+    <Content Include="wwwroot\scripts\views\projectsView.css" />
     <Content Include="wwwroot\scripts\views\projectsView.jsx" />
     <Content Include="wwwroot\scripts\views\viewActions.js" />
     <Content Include="wwwroot\styles\materialize-overrides.css" />

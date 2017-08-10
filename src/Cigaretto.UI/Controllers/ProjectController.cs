@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using Cigaretto.Common.Dto;
 using Cigaretto.DataLayer.DataContext.Tables;
 using Cigaretto.DataLayer.Providers;
 using Cigaretto.UI.Infrastructure;
@@ -13,10 +14,12 @@ namespace Cigaretto.UI.Controllers {
     public class ProjectController : BaseController {
         private readonly Common.Mapping.IObjectMapper Mapper;
         private readonly IProjectProvider ProjectProvider;
+        private readonly IModuleProvider ModuleProvider;
 
-        public ProjectController(Common.Mapping.IObjectMapper mapper, IProjectProvider projectProvider) {
+        public ProjectController(Common.Mapping.IObjectMapper mapper, IProjectProvider projectProvider, IModuleProvider moduleProvider) {
             Mapper = mapper;
             ProjectProvider = projectProvider;
+            ModuleProvider = moduleProvider;
         }
 
         [HttpGet]
@@ -31,7 +34,7 @@ namespace Cigaretto.UI.Controllers {
         }
 
         [HttpPost]
-        public async Task<IActionResult> SaveProject([FromBody][Required]ProjectDto projectDto) {
+        public async Task<IActionResult> AddProject([FromBody][Required]ProjectDto projectDto) {
             if (!ModelState.IsValid) {
                 return ValidationError();
             }
@@ -39,10 +42,15 @@ namespace Cigaretto.UI.Controllers {
             Project savedProject = await ProjectProvider.AddProjectAsync(project);
             return FromContent(savedProject);
         }
-    }
 
-    public class ProjectDto {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        [HttpDelete("api/project/{id}")]
+        public async Task<IActionResult> DeleteProject([Required]int id) {
+            if (!ModelState.IsValid) {
+                return ValidationError();
+            }
+
+            bool result = await ProjectProvider.RemoveProjectAsync(id);
+            return FromContent(result);
+        }        
     }
 }

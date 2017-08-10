@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
+using Cigaretto.Common.Dto;
 using Cigaretto.Common.Mapping;
 using Cigaretto.DataLayer.DataContext.Tables;
-using Cigaretto.UI.Controllers;
 
 namespace Cigaretto.UI.Infrastructure {
     public class ObjectMapperConfiguration : IObjectMapperConfiguration {
         public void Configure(IMapperConfigurationExpression config) {
-            config.CreateMap<ProjectDto, Project>().ReverseMap();
+            config.CreateMap<Project, ProjectDto>().ReverseMap();
+            config.CreateMap<Module, ModuleDto>().ReverseMap();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Cigaretto.DataLayer.Providers {
 
         Task<bool> RemoveProjectAsync(int id);
 
-        Task<List<Project>> GetProjectsAsync();
+        Task<List<Project>> GetProjectsAsync();        
     }
 
     public class ProjectProvider : IProjectProvider {

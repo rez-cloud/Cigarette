@@ -1,5 +1,5 @@
 ﻿import { connect } from 'react-redux'
-import { clearNotification } from "../actions/notificationActions";
+import { selectProject } from "../actions/projectActions";
 import ProjectList from "../components/projectList/projectList";
 
 const mapStateToProps = state => {

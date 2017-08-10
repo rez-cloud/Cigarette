@@ -34,8 +34,9 @@ namespace Cigaretto.UI {
 
             services.AddSingleton<IObjectMapperConfiguration, ObjectMapperConfiguration>();
             CommonConfiguration.ConfigureDependency(services, Configuration);
-            
+
             services.AddScoped<IProjectProvider, ProjectProvider>();
+            services.AddScoped<IModuleProvider, ModuleProvider>();
 
             // Add framework services.
             services.AddMvc();
