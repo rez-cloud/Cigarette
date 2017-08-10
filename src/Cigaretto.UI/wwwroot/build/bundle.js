@@ -62893,6 +62893,10 @@ var _projectListContainer = __webpack_require__(804);
 
 var _projectListContainer2 = _interopRequireDefault(_projectListContainer);
 
+var _projectsView = __webpack_require__(899);
+
+var _projectsView2 = _interopRequireDefault(_projectsView);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ProjectsView = (_temp = _class = function (_React$Component) {
@@ -62921,7 +62925,7 @@ var ProjectsView = (_temp = _class = function (_React$Component) {
                 { className: 'row ' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'col s3 blue lighten-5' },
+                    { className: 'col s3 blue lighten-5 ' + _projectsView2.default.projectList },
                     _react2.default.createElement(_projectListContainer2.default, { projects: this.props.projects })
                 ),
                 _react2.default.createElement('div', { className: 'col s9' })
@@ -63050,9 +63054,9 @@ var _LinearProgress = __webpack_require__(340);
 
 var _LinearProgress2 = _interopRequireDefault(_LinearProgress);
 
-var _Divider = __webpack_require__(832);
+var _projectList = __webpack_require__(897);
 
-var _Divider2 = _interopRequireDefault(_Divider);
+var _projectList2 = _interopRequireDefault(_projectList);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63097,7 +63101,7 @@ var ProjectModalForm = (_temp = _class = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                     _Subheader2.default,
-                    { className: 'pink lighten-5' },
+                    { className: 'grey lighten-4 ' + _projectList2.default.list },
                     'Available Projects'
                 ),
                 this.props.loading && _react2.default.createElement(_LinearProgress2.default, { mode: 'indeterminate', color: '#FF9800' }),
@@ -66213,106 +66217,8 @@ exports.default = LinearProgress;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 832 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _Divider = __webpack_require__(833);
-
-var _Divider2 = _interopRequireDefault(_Divider);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _Divider2.default;
-
-/***/ }),
-/* 833 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = __webpack_require__(12);
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = __webpack_require__(15);
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _simpleAssign = __webpack_require__(10);
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Divider = function Divider(props, context) {
-  var inset = props.inset,
-      style = props.style,
-      other = (0, _objectWithoutProperties3.default)(props, ['inset', 'style']);
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      prepareStyles = _context$muiTheme.prepareStyles;
-
-
-  var styles = {
-    root: {
-      margin: 0,
-      marginTop: -1,
-      marginLeft: inset ? 72 : 0,
-      height: 1,
-      border: 'none',
-      backgroundColor: baseTheme.palette.borderColor
-    }
-  };
-
-  return _react2.default.createElement('hr', (0, _extends3.default)({}, other, { style: prepareStyles((0, _simpleAssign2.default)(styles.root, style)) }));
-};
-
-Divider.muiName = 'Divider';
-
-Divider.propTypes = process.env.NODE_ENV !== "production" ? {
-  /**
-   * If true, the `Divider` will be indented.
-   */
-  inset: _propTypes2.default.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _propTypes2.default.object
-} : {};
-
-Divider.defaultProps = {
-  inset: false
-};
-
-Divider.contextTypes = {
-  muiTheme: _propTypes2.default.object.isRequired
-};
-
-exports.default = Divider;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
+/* 832 */,
+/* 833 */,
 /* 834 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -74718,6 +74624,100 @@ var keyOf = function keyOf(oneKeyObj) {
 };
 
 module.exports = keyOf;
+
+/***/ }),
+/* 897 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(898);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(132)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--2-1!../../../../node_modules/postcss-loader/lib/index.js??ref--2-2!./projectList.css", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--2-1!../../../../node_modules/postcss-loader/lib/index.js??ref--2-2!./projectList.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 898 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(131)(true);
+// imports
+
+
+// module
+exports.push([module.i, ".projectList_list_nIf {\r\n    border: rgb(206, 206, 206) dotted 1px;\r\n}\r\n", "", {"version":3,"sources":["C:/workspaces/GitHub/Cigaretto/src/Cigaretto.UI/wwwroot/scripts/components/projectList/projectList.css"],"names":[],"mappings":"AAAA;IACI,sCAAsC;CACzC","file":"projectList.css","sourcesContent":[".list {\r\n    border: rgb(206, 206, 206) dotted 1px;\r\n}\r\n"],"sourceRoot":""}]);
+
+// exports
+exports.locals = {
+	"list": "projectList_list_nIf"
+};
+
+/***/ }),
+/* 899 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(900);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(132)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/postcss-loader/lib/index.js??ref--2-2!./projectsView.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--2-1!../../../node_modules/postcss-loader/lib/index.js??ref--2-2!./projectsView.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 900 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(131)(true);
+// imports
+
+
+// module
+exports.push([module.i, ".projectsView_projectList_2ab {\r\n    padding: unset !important;\r\n}\r\n", "", {"version":3,"sources":["C:/workspaces/GitHub/Cigaretto/src/Cigaretto.UI/wwwroot/scripts/views/projectsView.css"],"names":[],"mappings":"AAAA;IACI,0BAA0B;CAC7B","file":"projectsView.css","sourcesContent":[".projectList {\r\n    padding: unset !important;\r\n}\r\n"],"sourceRoot":""}]);
+
+// exports
+exports.locals = {
+	"projectList": "projectsView_projectList_2ab"
+};
 
 /***/ })
 /******/ ]);

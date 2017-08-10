@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { createProject } from "../actions/projectActions";
 
 import ProjectListContainer from "../containers/projectListContainer";
+import css from './projectsView.css';
 
 class ProjectsView extends React.Component {
     static proptTypes = {
@@ -26,7 +27,7 @@ class ProjectsView extends React.Component {
     render() {
         return (
             <div className="row ">
-                <div className="col s3 blue lighten-5">
+                <div className={`col s3 blue lighten-5 ${css.projectList}`}>
                     <ProjectListContainer projects={this.props.projects} /></div>
                 <div className="col s9"></div>
             </div>
