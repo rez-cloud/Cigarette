@@ -70,6 +70,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Cigaretto.Common\Cigaretto.Common.csproj" />
     <ProjectReference Include="..\Cigaretto.DataLayer\Cigaretto.DataLayer.csproj" />
+    <ProjectReference Include="..\Cigaretto.Integration.GitHub\Cigaretto.Integration.GitHub.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
