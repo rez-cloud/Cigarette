@@ -66486,6 +66486,10 @@ var _Paper = __webpack_require__(104);
 
 var _Paper2 = _interopRequireDefault(_Paper);
 
+var _moduleCard = __webpack_require__(910);
+
+var _moduleCard2 = _interopRequireDefault(_moduleCard);
+
 var _moduleList = __webpack_require__(838);
 
 var _moduleList2 = _interopRequireDefault(_moduleList);
@@ -66519,7 +66523,7 @@ var ModuleList = (_temp = _class = function (_React$Component) {
                 'div',
                 null,
                 this.props.modules.map(function (module) {
-                    return module.name;
+                    return _react2.default.createElement(_moduleCard2.default, { key: module.id, module: module });
                 })
             );
         }
@@ -75412,6 +75416,172 @@ var ModuleModalForm = (_temp = _class = function (_React$Component) {
     dataProcessing: _propTypes2.default.bool.isRequired
 }, _temp);
 exports.default = ModuleModalForm;
+
+/***/ }),
+/* 910 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends2 = __webpack_require__(13);
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _getPrototypeOf = __webpack_require__(6);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(4);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(5);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(7);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(8);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _class, _temp;
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(42);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Dialog = __webpack_require__(870);
+
+var _Dialog2 = _interopRequireDefault(_Dialog);
+
+var _FlatButton = __webpack_require__(874);
+
+var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+var _TextField = __webpack_require__(877);
+
+var _TextField2 = _interopRequireDefault(_TextField);
+
+var _LinearProgress = __webpack_require__(341);
+
+var _LinearProgress2 = _interopRequireDefault(_LinearProgress);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ModuleCard = (_temp = _class = function (_React$Component) {
+    (0, _inherits3.default)(ModuleCard, _React$Component);
+
+    function ModuleCard(props) {
+        (0, _classCallCheck3.default)(this, ModuleCard);
+
+        var _this = (0, _possibleConstructorReturn3.default)(this, (ModuleCard.__proto__ || (0, _getPrototypeOf2.default)(ModuleCard)).call(this, props));
+
+        _this.state = {
+            module: (0, _extends3.default)({}, _this.props.module)
+        };
+
+        return _this;
+    }
+
+    (0, _createClass3.default)(ModuleCard, [{
+        key: 'render',
+        value: function render() {
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'card' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'card-content' },
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'card-title activator grey-text text-darken-4' },
+                        this.props.module.name,
+                        _react2.default.createElement(
+                            'i',
+                            { className: 'material-icons right' },
+                            'more_vert'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'card-tabs' },
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'tabs tabs-fixed-width' },
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'tab' },
+                            _react2.default.createElement(
+                                'a',
+                                { href: '#test4' },
+                                'Test 1'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'tab' },
+                            _react2.default.createElement(
+                                'a',
+                                { className: 'active', href: '#test5' },
+                                'Test 2'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'tab' },
+                            _react2.default.createElement(
+                                'a',
+                                { href: '#test6' },
+                                'Test 3'
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'card-content grey lighten-4' },
+                    _react2.default.createElement(
+                        'div',
+                        { id: 'test4' },
+                        'Test 1'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { id: 'test5' },
+                        'Test 2'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { id: 'test6' },
+                        'Test 3'
+                    )
+                )
+            );
+        }
+    }]);
+    return ModuleCard;
+}(_react2.default.Component), _class.proptTypes = {
+    module: _propTypes2.default.object.isRequired
+    //open: PropTypes.bool.isRequired,
+    //dataProcessing: PropTypes.bool.isRequired
+}, _temp);
+exports.default = ModuleCard;
 
 /***/ })
 /******/ ]);

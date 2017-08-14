@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
+import ModuleCard from "../moduleCard/moduleCard";
 
 import css from './moduleList.css';
 
@@ -31,7 +32,7 @@ class ModuleList extends React.Component {
         }
         return (
             <div>{this.props.modules.map(module => {
-                return module.name;
+                return <ModuleCard key={module.id} module={module} />;
             })}
             </div>
         );
