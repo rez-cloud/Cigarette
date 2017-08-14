@@ -252,4 +252,7 @@ paket-files/
 *.sln.iml
 
 # webpack builds
-src/Cigaretto.UI/wwwroot/build/
+**/src/Cigaretto.UI/wwwroot/build/
+src/Cigaretto.UI/wwwroot/build/bundle.js
+src/Cigaretto.UI/wwwroot/build/bundle.js
+src/Cigaretto.UI/wwwroot/build/bundle.js.map

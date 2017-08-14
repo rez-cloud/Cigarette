@@ -17,6 +17,11 @@ class API {
         return this._get(url);
     }
 
+    saveModule(projectId, module) {
+        const url = moduleApi.replace('{projectId}', projectId);
+        return this._post(url, module);
+    }
+
     _post(url, data) {
         return $.ajax({
             type: "POST",

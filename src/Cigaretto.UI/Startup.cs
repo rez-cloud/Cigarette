@@ -22,6 +22,9 @@ namespace Cigaretto.UI {
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+            if (env.IsDevelopment()) {
+                builder.AddUserSecrets<Startup>();
+            }
             Configuration = builder.Build();
         }
 
@@ -42,7 +45,7 @@ namespace Cigaretto.UI {
             services.AddMvc();
 
             string connectionString = Configuration[ConnectionStringName] ?? Configuration.GetConnectionString(ConnectionStringName);
-            services.AddDbContext<CigarettoDataContext>(options => options.UseSqlServer(connectionString, a => a.MigrationsAssembly("SimCorp.Cloud.KPI.API.PostData")));
+            services.AddDbContext<CigarettoDataContext>(options => options.UseSqlServer(connectionString, a => a.MigrationsAssembly("Cigaretto.DataLayer")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

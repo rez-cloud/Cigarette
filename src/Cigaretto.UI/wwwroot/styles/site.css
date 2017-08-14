@@ -31,3 +31,8 @@ textarea {
         display: none;
     }
 }
+
+.content {
+    width: calc(100% - 2*3rem);
+    max-width: calc(100% - 2*3rem);
+}

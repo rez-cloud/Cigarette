@@ -8,6 +8,7 @@ import ProjectsReducer from './project/projectsReducer';
 import ProjectsLoadingReducer from "./project/projectLoadingReducer";
 import SelectProjectReducer from "./project/selectProjectReducer";
 
+import AddModuleReducer from "./module/addModuleReducer";
 import ModulesLoadingReducer from "./module/moduleLoadingReducer";
 import ModulesReducer from "./module/modulesReducer";
 
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
     projects: ProjectsReducer,
     isProjectsLoading: ProjectsLoadingReducer,
     currentProject: SelectProjectReducer,
-    
+
+    newModule: AddModuleReducer,
     modules: ModulesReducer,
     isModulesLoading: ModulesLoadingReducer
 });

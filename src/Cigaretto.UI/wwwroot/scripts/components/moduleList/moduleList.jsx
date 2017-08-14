@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-
+import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 
 import css from './moduleList.css';
@@ -11,7 +11,8 @@ import css from './moduleList.css';
 class ModuleList extends React.Component {
     static proptTypes = {
         loading: PropTypes.bool,
-        modules: PropTypes.array.isRequired
+        modules: PropTypes.array.isRequired,
+        isProjectSelected: PropTypes.bool.isRequired
     };
 
     constructor(props) {
@@ -22,8 +23,11 @@ class ModuleList extends React.Component {
     }
 
     render() {
-        if (this.props.modules.length === 0) {
-            return (<Paper className={css.paper} zDepth={2} />);
+        if (this.props.isProjectSelected && this.props.modules.length === 0) {
+            return (<Paper className={css.paper} zDepth={2} >
+                No Modules found.
+                        <RaisedButton label="create module" primary={true} onClick={this.props.requestCreateModule} />
+            </Paper>);
         }
         return (
             <div>{this.props.modules.map(module => {

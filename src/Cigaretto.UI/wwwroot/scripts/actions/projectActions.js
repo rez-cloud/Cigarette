@@ -26,7 +26,7 @@ export function beginLoadProjects() {
     return { type: types.BEGIN_LOAD_PROJECTS }
 }
 
-export function endLoadProjects(projects, error) {
+export function endLoadProjects(projects=[], error) {
     return { type: types.END_LOAD_PROJECTS, projects: projects, error: error }
 }
 

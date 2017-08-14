@@ -9,6 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from './routes'
 import Nav from "./components/nav/nav";
 import AddProject from "./containers/addProject";
+import AddModule from "./containers/addModule";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -39,6 +40,8 @@ class Application extends React.Component {
                     <div>
                         <Nav />
                         <AddProject />
+                        <AddModule />
+                        
                         <div className={css.content}>
                             {routes}
                         </div>
@@ -54,6 +57,7 @@ class Application extends React.Component {
 
                         </ToastContainer>
                         {this.renderNotifications()}
+                        
                     </div>
                 </MuiThemeProvider>
             </ConnectedRouter>

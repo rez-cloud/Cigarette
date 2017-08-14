@@ -1,18 +1,19 @@
 ﻿import { connect } from 'react-redux'
-import { selectProject } from "../actions/projectActions";
+import { requestCreateModule } from "../actions/moduleActions";
 import ModuleList from "../components/moduleList/moduleList";
 
 const mapStateToProps = state => {
     return {
         modules: state.modules,
-        loading: state.isModulesLoading
+        loading: state.isModulesLoading,
+        isProjectSelected: !!state.currentProject.name
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        selectModule: module => {
-            //dispatch(selectProject(project));
+        requestCreateModule: module => {
+            dispatch(requestCreateModule(module));
         }
     }
 }

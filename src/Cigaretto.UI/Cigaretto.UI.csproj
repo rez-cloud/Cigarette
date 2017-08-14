@@ -6,6 +6,7 @@
 
   <PropertyGroup>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+    <UserSecretsId>f1a78f78-c9ae-4092-abf9-1e4f7c1b5451</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,14 +16,15 @@
     <Content Include="wwwroot\scripts\actions\projectActions.js" />
     <Content Include="wwwroot\scripts\actionTypes.js" />
     <Content Include="wwwroot\scripts\application.jsx" />
+    <Content Include="wwwroot\scripts\components\moduleForm\moduleModalForm.jsx" />
     <Content Include="wwwroot\scripts\components\moduleList\moduleList.css" />
     <Content Include="wwwroot\scripts\components\moduleList\moduleList.jsx" />
     <Content Include="wwwroot\scripts\components\nav\nav.css" />
-    <Content Include="wwwroot\scripts\components\nav\nav.jsx" />
-    <Content Include="wwwroot\scripts\components\nav\nav.scss" />
+    <Content Include="wwwroot\scripts\components\nav\nav.jsx" />    
     <Content Include="wwwroot\scripts\components\projectForm\ProjectModalForm.jsx" />
     <Content Include="wwwroot\scripts\components\projectList\projectList.jsx" />
     <Content Include="wwwroot\scripts\components\projectList\projectList.css" />
+    <Content Include="wwwroot\scripts\containers\addModule.js" />
     <Content Include="wwwroot\scripts\containers\AddProject.js" />
     <Content Include="wwwroot\scripts\containers\applicationContainer.js" />
     <Content Include="wwwroot\scripts\containers\moduleListContainer.js" />
@@ -31,13 +33,13 @@
     <Content Include="wwwroot\scripts\infrastructure\API.js" />
     <Content Include="wwwroot\scripts\infrastructure\utils.jsx" />
     <Content Include="wwwroot\scripts\reducers\index.js" />
+    <Content Include="wwwroot\scripts\reducers\module\addModuleReducer.js" />
     <Content Include="wwwroot\scripts\reducers\module\moduleLoadingReducer.js" />
     <Content Include="wwwroot\scripts\reducers\module\modulesReducer.js" />
     <Content Include="wwwroot\scripts\reducers\notificationReducer.js" />
     <Content Include="wwwroot\scripts\reducers\project\addProjectReducer.js" />
     <Content Include="wwwroot\scripts\reducers\project\projectLoadingReducer.js" />
-    <Content Include="wwwroot\scripts\reducers\project\projectsReducer.js" />
-    <Content Include="wwwroot\scripts\reducers\project\projectsReducer.jsx" />
+    <Content Include="wwwroot\scripts\reducers\project\projectsReducer.js" />    
     <Content Include="wwwroot\scripts\reducers\project\selectProjectReducer.js" />
     <Content Include="wwwroot\scripts\reducers\viewReducer.js" />
     <Content Include="wwwroot\scripts\routes.jsx" />
@@ -56,9 +58,8 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />

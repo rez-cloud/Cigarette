@@ -3,7 +3,7 @@
 namespace Cigaretto.Integration.GitHub {
     public class GitHubIntegration {
 
-        public AuthorizeRequestDto GetAuthorizeRequest() {
+        public AuthorizeRequestDto CreateAuthorizeRequest() {
             return new AuthorizeRequestDto();
         }
 
