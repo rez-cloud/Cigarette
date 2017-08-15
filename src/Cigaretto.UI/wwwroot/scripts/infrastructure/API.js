@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 
 const projectApi = 'api/project';
-const moduleApi = 'api/project/{projectId}/module';
+const componentApi = 'api/project/{projectId}/component';
 
 class API {
     loadProjects() {
@@ -12,14 +12,14 @@ class API {
         return this._post(projectApi, project);
     }
 
-    loadModules(projectId) {
-        const url = moduleApi.replace('{projectId}', projectId);
+    loadComponents(projectId) {
+        const url = componentApi.replace('{projectId}', projectId);
         return this._get(url);
     }
 
-    saveModule(projectId, module) {
-        const url = moduleApi.replace('{projectId}', projectId);
-        return this._post(url, module);
+    saveComponent(projectId, component) {
+        const url = componentApi.replace('{projectId}', projectId);
+        return this._post(url, component);
     }
 
     _post(url, data) {

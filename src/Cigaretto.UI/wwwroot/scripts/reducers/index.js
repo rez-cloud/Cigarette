@@ -8,9 +8,9 @@ import ProjectsReducer from './project/projectsReducer';
 import ProjectsLoadingReducer from "./project/projectLoadingReducer";
 import SelectProjectReducer from "./project/selectProjectReducer";
 
-import AddModuleReducer from "./module/addModuleReducer";
-import ModulesLoadingReducer from "./module/moduleLoadingReducer";
-import ModulesReducer from "./module/modulesReducer";
+import AddComponentReducer from "./module/addComponentReducer";
+import ComponentsLoadingReducer from "./module/componentLoadingReducer";
+import ComponentsReducer from "./module/componentsReducer";
 
 const rootReducer = combineReducers({
     currentView: ViewReducer,
@@ -21,8 +21,8 @@ const rootReducer = combineReducers({
     isProjectsLoading: ProjectsLoadingReducer,
     currentProject: SelectProjectReducer,
 
-    newModule: AddModuleReducer,
-    modules: ModulesReducer,
-    isModulesLoading: ModulesLoadingReducer
+    newComponent: AddComponentReducer,
+    components: ComponentsReducer,
+    isComponentsLoading: ComponentsLoadingReducer
 });
 export default rootReducer

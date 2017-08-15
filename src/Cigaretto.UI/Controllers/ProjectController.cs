@@ -14,12 +14,12 @@ namespace Cigaretto.UI.Controllers {
     public class ProjectController : BaseController {
         private readonly Common.Mapping.IObjectMapper Mapper;
         private readonly IProjectProvider ProjectProvider;
-        private readonly IModuleProvider ModuleProvider;
+        private readonly IComponentProvider ComponentProvider;
 
-        public ProjectController(Common.Mapping.IObjectMapper mapper, IProjectProvider projectProvider, IModuleProvider moduleProvider) {
+        public ProjectController(Common.Mapping.IObjectMapper mapper, IProjectProvider projectProvider, IComponentProvider componentProvider) {
             Mapper = mapper;
             ProjectProvider = projectProvider;
-            ModuleProvider = moduleProvider;
+            ComponentProvider = componentProvider;
         }
 
         [HttpGet]

@@ -21,31 +21,15 @@ namespace Cigaretto.DataLayer.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("ModuleId");
-
                     b.Property<string>("Name");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("ModuleId");
-
-                    b.ToTable("Components");
-                });
-
-            modelBuilder.Entity("Cigaretto.DataLayer.DataContext.Tables.Module", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.Property<int?>("ProjectId");
+                    b.Property<int>("ProjectId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Modules");
+                    b.ToTable("Components");
                 });
 
             modelBuilder.Entity("Cigaretto.DataLayer.DataContext.Tables.Project", b =>
@@ -62,16 +46,10 @@ namespace Cigaretto.DataLayer.Migrations
 
             modelBuilder.Entity("Cigaretto.DataLayer.DataContext.Tables.Component", b =>
                 {
-                    b.HasOne("Cigaretto.DataLayer.DataContext.Tables.Module", "Module")
-                        .WithMany("Components")
-                        .HasForeignKey("ModuleId");
-                });
-
-            modelBuilder.Entity("Cigaretto.DataLayer.DataContext.Tables.Module", b =>
-                {
                     b.HasOne("Cigaretto.DataLayer.DataContext.Tables.Project", "Project")
-                        .WithMany("Modules")
-                        .HasForeignKey("ProjectId");
+                        .WithMany("Components")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

@@ -9,7 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from './routes'
 import Nav from "./components/nav/nav";
 import AddProject from "./containers/addProject";
-import AddModule from "./containers/addModule";
+import AddComponent from "./containers/addComponent";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -40,7 +40,7 @@ class Application extends React.Component {
                     <div>
                         <Nav />
                         <AddProject />
-                        <AddModule />
+                        <AddComponent />
                         
                         <div className={css.content}>
                             {routes}

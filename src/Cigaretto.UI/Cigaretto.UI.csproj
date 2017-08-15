@@ -11,31 +11,33 @@
 
   <ItemGroup>
     <Content Include="wwwroot\entrypoint.jsx" />
-    <Content Include="wwwroot\scripts\actions\moduleActions.js" />
+    <Content Include="wwwroot\scripts\actions\componentActions.js" />
     <Content Include="wwwroot\scripts\actions\notificationActions.js" />
     <Content Include="wwwroot\scripts\actions\projectActions.js" />
     <Content Include="wwwroot\scripts\actionTypes.js" />
     <Content Include="wwwroot\scripts\application.jsx" />
-    <Content Include="wwwroot\scripts\components\moduleForm\moduleModalForm.jsx" />
-    <Content Include="wwwroot\scripts\components\moduleList\moduleList.css" />
-    <Content Include="wwwroot\scripts\components\moduleList\moduleList.jsx" />
+    <Content Include="wwwroot\scripts\components\componentForm\componentModalForm.jsx" />
+    <Content Include="wwwroot\scripts\components\componentList\componentList.css" />
+    <Content Include="wwwroot\scripts\components\componentList\componentList.jsx" />
+    <Content Include="wwwroot\scripts\components\moduleCard\moduleCard.jsx" />
     <Content Include="wwwroot\scripts\components\nav\nav.css" />
     <Content Include="wwwroot\scripts\components\nav\nav.jsx" />    
     <Content Include="wwwroot\scripts\components\projectForm\ProjectModalForm.jsx" />
     <Content Include="wwwroot\scripts\components\projectList\projectList.jsx" />
     <Content Include="wwwroot\scripts\components\projectList\projectList.css" />
-    <Content Include="wwwroot\scripts\containers\addModule.js" />
+    <Content Include="wwwroot\scripts\containers\addComponent.js" />
     <Content Include="wwwroot\scripts\containers\AddProject.js" />
     <Content Include="wwwroot\scripts\containers\applicationContainer.js" />
-    <Content Include="wwwroot\scripts\containers\moduleListContainer.js" />
+    <Content Include="wwwroot\scripts\containers\componentListContainer.js" />
+    <Content Include="wwwroot\scripts\containers\module\moduleCardContainer.js" />
     <Content Include="wwwroot\scripts\containers\projectListContainer.js" />
     <Content Include="wwwroot\scripts\containers\projectsViewContainer.js" />
     <Content Include="wwwroot\scripts\infrastructure\API.js" />
     <Content Include="wwwroot\scripts\infrastructure\utils.jsx" />
     <Content Include="wwwroot\scripts\reducers\index.js" />
-    <Content Include="wwwroot\scripts\reducers\module\addModuleReducer.js" />
-    <Content Include="wwwroot\scripts\reducers\module\moduleLoadingReducer.js" />
-    <Content Include="wwwroot\scripts\reducers\module\modulesReducer.js" />
+    <Content Include="wwwroot\scripts\reducers\module\addComponentReducer.js" />
+    <Content Include="wwwroot\scripts\reducers\module\componentLoadingReducer.js" />
+    <Content Include="wwwroot\scripts\reducers\module\componentsReducer.js" />
     <Content Include="wwwroot\scripts\reducers\notificationReducer.js" />
     <Content Include="wwwroot\scripts\reducers\project\addProjectReducer.js" />
     <Content Include="wwwroot\scripts\reducers\project\projectLoadingReducer.js" />
@@ -75,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\scripts\components\NewFolder\" />
   </ItemGroup>
 
 </Project>

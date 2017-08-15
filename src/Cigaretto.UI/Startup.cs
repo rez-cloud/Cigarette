@@ -39,7 +39,7 @@ namespace Cigaretto.UI {
             CommonConfiguration.ConfigureDependency(services, Configuration);
 
             services.AddScoped<IProjectProvider, ProjectProvider>();
-            services.AddScoped<IModuleProvider, ModuleProvider>();
+            services.AddScoped<IComponentProvider, ComponentProvider>();
 
             // Add framework services.
             services.AddMvc();

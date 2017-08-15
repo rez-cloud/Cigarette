@@ -2,7 +2,7 @@
 import API from "../infrastructure/API";
 import { addNotification } from "./notificationActions";
 
-import { loadModules } from "./moduleActions";
+import { loadComponents } from "./componentActions";
 
 const api = new API();
 
@@ -33,7 +33,7 @@ export function endLoadProjects(projects=[], error) {
 export function selectProject(project) {
     return dispatch => {
         dispatch(selectProjectCore(project));
-        dispatch(loadModules(project.id));
+        dispatch(loadComponents(project.id));
     }
 }
 
