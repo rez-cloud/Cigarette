@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { createProject } from "../actions/projectActions";
 
 import ProjectListContainer from "../containers/projectListContainer";
-import ComponentListContainer from "../containers/componentListContainer";
+import ProjectDetailContainer from "../containers/projectDetailContainer";
 
 import css from './projectsView.css';
 
@@ -29,7 +29,7 @@ class ProjectsView extends React.Component {
                 <div className={`col s3 ${css.projectList}`}>
                     <ProjectListContainer /></div>
                 <div className="col s9">
-                    <ComponentListContainer /></div>
+                    <ProjectDetailContainer /></div>
             </div>
         );
     }

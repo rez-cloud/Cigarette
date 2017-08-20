@@ -10,17 +10,25 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
 import css from "./nav.css";
 import { requestCreateProject } from "../../actions/projectActions";
+import { browserHistory } from 'react-router';
+
 
 class Nav extends React.Component {
-
+    static contextTypes = {
+        router: React.PropTypes.object        
+    };
+    
     constructor(props) {
         super(props);
         this.state = {
             value: 3
-        };        
+        };
+        this.handleGoToIntegrationSettings = this.handleGoToIntegrationSettings.bind(this);
     }
 
     handleChange = (event, index, value) => this.setState({ value });
+
+    handleGoToIntegrationSettings = () => this.context.router.history.push('settings/integrations') ;
 
     render() {
         return (
@@ -43,7 +51,7 @@ class Nav extends React.Component {
                                 <NavigationExpandMoreIcon />
                             </IconButton>
                         }>
-                        <MenuItem primaryText="Settings" />
+                        <MenuItem primaryText="Integraions" onClick={this.handleGoToIntegrationSettings}/>
                         <MenuItem primaryText="More Info" />
                     </IconMenu>
                 </ToolbarGroup>

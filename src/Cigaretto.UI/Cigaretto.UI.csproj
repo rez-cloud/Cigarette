@@ -12,6 +12,7 @@
   <ItemGroup>
     <Content Include="wwwroot\entrypoint.jsx" />
     <Content Include="wwwroot\scripts\actions\componentActions.js" />
+    <Content Include="wwwroot\scripts\actions\integrationActions.js" />
     <Content Include="wwwroot\scripts\actions\notificationActions.js" />
     <Content Include="wwwroot\scripts\actions\projectActions.js" />
     <Content Include="wwwroot\scripts\actionTypes.js" />
@@ -19,17 +20,22 @@
     <Content Include="wwwroot\scripts\components\componentForm\componentModalForm.jsx" />
     <Content Include="wwwroot\scripts\components\componentList\componentList.css" />
     <Content Include="wwwroot\scripts\components\componentList\componentList.jsx" />
+    <Content Include="wwwroot\scripts\components\integration\integrations.jsx" />
     <Content Include="wwwroot\scripts\components\moduleCard\moduleCard.jsx" />
     <Content Include="wwwroot\scripts\components\nav\nav.css" />
     <Content Include="wwwroot\scripts\components\nav\nav.jsx" />    
     <Content Include="wwwroot\scripts\components\projectForm\ProjectModalForm.jsx" />
     <Content Include="wwwroot\scripts\components\projectList\projectList.jsx" />
     <Content Include="wwwroot\scripts\components\projectList\projectList.css" />
+    <Content Include="wwwroot\scripts\components\project\projectDetail.jsx" />
     <Content Include="wwwroot\scripts\containers\addComponent.js" />
     <Content Include="wwwroot\scripts\containers\AddProject.js" />
     <Content Include="wwwroot\scripts\containers\applicationContainer.js" />
     <Content Include="wwwroot\scripts\containers\componentListContainer.js" />
+    <Content Include="wwwroot\scripts\containers\integrationsViewContainer.js" />
+    <Content Include="wwwroot\scripts\containers\integration\integrationsContainer.js" />
     <Content Include="wwwroot\scripts\containers\module\moduleCardContainer.js" />
+    <Content Include="wwwroot\scripts\containers\projectDetailContainer.js" />
     <Content Include="wwwroot\scripts\containers\projectListContainer.js" />
     <Content Include="wwwroot\scripts\containers\projectsViewContainer.js" />
     <Content Include="wwwroot\scripts\infrastructure\API.js" />
@@ -46,6 +52,7 @@
     <Content Include="wwwroot\scripts\reducers\viewReducer.js" />
     <Content Include="wwwroot\scripts\routes.jsx" />
     <Content Include="wwwroot\scripts\store.jsx" />
+    <Content Include="wwwroot\scripts\views\integrationsView.jsx" />
     <Content Include="wwwroot\scripts\views\projectsView.css" />
     <Content Include="wwwroot\scripts\views\projectsView.jsx" />
     <Content Include="wwwroot\scripts\views\viewActions.js" />

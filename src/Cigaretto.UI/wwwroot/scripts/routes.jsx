@@ -2,13 +2,19 @@
 import { Route, Switch } from 'react-router';
 
 import ProjectsViewContainer from "./containers/projectsViewContainer";
+import IntegrationsViewContainer from "./containers/integrationsViewContainer";
 
 const _routes = [
     {
-        name: "projects",
-        path: '/',
-        component: ProjectsViewContainer
-    }
+        name: "integrations",
+        path: '/settings/integrations',
+        component: IntegrationsViewContainer
+    },
+    {
+    name: "projects",
+    path: '/',
+    component: ProjectsViewContainer
+}
 ];
 
 export default (
