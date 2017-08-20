@@ -252,4 +252,4 @@ paket-files/
 *.sln.iml
 
 # webpack builds
-src/Cigaretto.UI/wwwroot/build
+**/wwwroot/build/

@@ -13,7 +13,7 @@ const _routes = [
     {
     name: "projects",
     path: '/',
-    component: ProjectsViewContainer
+    component: ProjectsViewContainer 
 }
 ];
 

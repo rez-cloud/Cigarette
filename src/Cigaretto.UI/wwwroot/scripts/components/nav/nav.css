@@ -1,6 +1,7 @@
 ﻿label.logo-caption {
-    font-size: 2em;    
+    font-size: 2em;
     font-family: roboto;
+    cursor: pointer;
 }
 
     label.logo-caption span.first {
@@ -16,3 +17,7 @@
 .logo-container {
     padding-left: 2em;
 }
+
+    .logo-container:hover {
+        cursor: pointer;
+    }

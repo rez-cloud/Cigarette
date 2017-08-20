@@ -24,17 +24,19 @@ class Nav extends React.Component {
             value: 3
         };
         this.handleGoToIntegrationSettings = this.handleGoToIntegrationSettings.bind(this);
+        this.handleGoToMainView = this.handleGoToMainView.bind(this);
     }
 
     handleChange = (event, index, value) => this.setState({ value });
 
     handleGoToIntegrationSettings = () => this.context.router.history.push('settings/integrations') ;
+    handleGoToMainView = () => this.context.router.history.push('/') ;
 
     render() {
         return (
             <Toolbar>
                 <ToolbarGroup firstChild={true}>
-                    <div className={css['logo-container']}>
+                    <div className={css['logo-container']} onClick={this.handleGoToMainView}>
                         <label className={css['logo-caption']}>
                             <span className={css.first}>Ciga</span>
                             <span className={css.second}>retto</span></label>
